@@ -38,7 +38,7 @@ angular.module('jkuri.gallery', [])
 	'  <a class="nav-left" ng-click="prevImage()"><i class="fa fa-angle-left"></i></a>' +
 	'  <img ng-src="{{ Image }}" ng-click="nextImage()" ng-show="!loading" class="effect" />' +
 	'  <a class="nav-right" ng-click="nextImage()"><i class="fa fa-angle-right"></i></a>' +
-	'  <span class="info-text">{{ index + 1 }}/{{ images.length }} - {{ description }}</span>' +
+	'  <span class="info-text">{{ index + 1 }}/{{ images.length }} - {{ Title }}</span>' +
 	'  <div class="ng-thumbnails-wrapper">' +
 	'    <div class="ng-thumbnails slide-left">' +
 	'      <div ng-repeat="i in images">' + 
@@ -102,7 +102,7 @@ angular.module('jkuri.gallery', [])
 					scope.Image = resp.src;
 					smartScroll(scope.index);
 				});
-				scope.description = scope.images[i].description || '';
+				scope.Title = scope.images[i].Title || '';
 			};
 
 			scope.changeImage = function (i) {
