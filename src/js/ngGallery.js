@@ -27,7 +27,7 @@ angular.module('jkuri.gallery', [])
   	$templateCache.put(template_url,
 	'<div class="{{ baseClass }}">' +
 	'  <div ng-repeat="i in images">' +
-	'    <img ng-src="{{ i.thumb }}" class="{{ thumbClass }}" ng-click="openGallery($index)" alt="Image {{ $index + 1 }}" />' +
+	'    <img ng-src="{{ i.Thumbnail }}" class="{{ thumbClass }}" ng-click="openGallery($index)" alt="Image {{ $index + 1 }}" />' +
 	'  </div>' +
 	'</div>' +
 	'<div class="ng-overlay" ng-show="opened">' +
@@ -36,13 +36,13 @@ angular.module('jkuri.gallery', [])
 	'  <div class="uil-ring-css" ng-show="loading"><div></div></div>' + 
 	'  <a class="close-popup" ng-click="closeGallery()"><i class="fa fa-close"></i></a>' +
 	'  <a class="nav-left" ng-click="prevImage()"><i class="fa fa-angle-left"></i></a>' +
-	'  <img ng-src="{{ img }}" ng-click="nextImage()" ng-show="!loading" class="effect" />' +
+	'  <img ng-src="{{ Image }}" ng-click="nextImage()" ng-show="!loading" class="effect" />' +
 	'  <a class="nav-right" ng-click="nextImage()"><i class="fa fa-angle-right"></i></a>' +
 	'  <span class="info-text">{{ index + 1 }}/{{ images.length }} - {{ description }}</span>' +
 	'  <div class="ng-thumbnails-wrapper">' +
 	'    <div class="ng-thumbnails slide-left">' +
 	'      <div ng-repeat="i in images">' + 
-	'        <img ng-src="{{ i.thumb }}" ng-class="{\'active\': index === $index}" ng-click="changeImage($index)" />' +
+	'        <img ng-src="{{ i.Thumbnail }}" ng-class="{\'active\': index === $index}" ng-click="changeImage($index)" />' +
 	'      </div>' +
 	'    </div>' +
 	'  </div>' +
@@ -91,7 +91,7 @@ angular.module('jkuri.gallery', [])
 					deferred.reject();
 				};
 				
-				image.src = scope.images[i].img;
+				image.src = scope.images[i].Image;
 				scope.loading = true;
 
 				return deferred.promise;
@@ -99,7 +99,7 @@ angular.module('jkuri.gallery', [])
 
 			var showImage = function (i) {
 				loadImage(scope.index).then(function(resp) {
-					scope.img = resp.src;
+					scope.Image = resp.src;
 					smartScroll(scope.index);
 				});
 				scope.description = scope.images[i].description || '';
@@ -108,7 +108,7 @@ angular.module('jkuri.gallery', [])
 			scope.changeImage = function (i) {
 				scope.index = i;
 				loadImage(scope.index).then(function(resp) {
-					scope.img = resp.src;
+					scope.Image = resp.src;
 					smartScroll(scope.index);
 				});
 			};
@@ -168,7 +168,7 @@ angular.module('jkuri.gallery', [])
 			var calculateThumbsWidth = function () {
 				var width = 0,
 					visible_width = 0;
-				angular.forEach($thumbnails.find('img'), function(thumb) {
+				angular.forEach($thumbnails.find('Image'), function(thumb) {
 					width += thumb.clientWidth;
 					width += 10; // margin-right
 					visible_width = thumb.clientWidth + 10;
