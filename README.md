@@ -12,7 +12,7 @@ Install
 
 #### With bower:
 
-    $ bower install ngGallery
+    $ bower install ngGallery-buras
 
 #### Example Configuration
 
@@ -21,12 +21,12 @@ Install
 angular.module('app', ['jkuri.gallery']).
   controller('Ctrl', function($scope, $document) {
     self.images = [
-      {thumb: 'images/thumbs/1.jpg', img: 'images/1.jpg'},
-		  {thumb: 'images/thumbs/2.jpg', img: 'images/2.jpg'},
-		  {thumb: 'images/thumbs/3.jpg', img: 'images/3.jpg'},
-		  {thumb: 'images/thumbs/4.jpg', img: 'images/4.jpg'},
-		  {thumb: 'images/thumbs/5.jpg', img: 'images/5.jpg'},
-		  {thumb: 'images/thumbs/6.jpg', img: 'images/6.jpg'}
+      {Thumbnail: 'images/thumbs/1.jpg', Image: 'images/1.jpg'},
+		  {Thumbnail: 'images/thumbs/2.jpg', Image: 'images/2.jpg'},
+		  {Thumbnail: 'images/thumbs/3.jpg', Image: 'images/3.jpg'},
+		  {Thumbnail: 'images/thumbs/4.jpg', Image: 'images/4.jpg'},
+		  {Thumbnail: 'images/thumbs/5.jpg', Image: 'images/5.jpg'},
+		  {Thumbnail: 'images/thumbs/6.jpg', Image: 'images/6.jpg'}
     ];
   }
 );
