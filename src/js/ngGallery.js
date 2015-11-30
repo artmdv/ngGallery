@@ -40,13 +40,6 @@ angular.module('jkuri.gallery', [])
 					'  <img ng-src="{{ Image }}" ng-click="nextImage()" ng-show="!loading" class="effect" />' +
 					'  <a class="nav-right" ng-click="nextImage()"><i class="fa fa-angle-right"></i></a>' +
 					'  <span class="info-text">{{ index + 1 }}/{{ images.length }} - {{ Title }}</span>' +
-					'  <div class="ng-thumbnails-wrapper">' +
-					'    <div class="ng-thumbnails slide-left">' +
-					'      <div ng-repeat="i in images">' +
-					'        <img ng-src="{{ i.Thumbnail }}" ng-class="{\'active\': index === $index}" ng-click="changeImage($index)" />' +
-					'      </div>' +
-					'    </div>' +
-					'  </div>' +
 					'</div>'
 			);
 
