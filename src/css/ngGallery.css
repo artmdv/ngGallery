@@ -117,7 +117,7 @@ img.ng-thumb {
   position: fixed;
   left: 0;
   right: 0;
-  bottom: 100px;
+  bottom: 50px;
 }
 
 .ng-gallery-content > .ng-thumbnails-wrapper {
